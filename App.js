@@ -10,7 +10,7 @@ const navigator = createStackNavigator({
 {
   initialRouteName: 'Sign',
   defaultNavigationOptions: {
-      title: 'Figma'
+    headerShown: false
   }
 });
 
