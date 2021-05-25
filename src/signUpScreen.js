@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
   underText: {
     fontSize: 17,
     textAlign: "center",
-    padding: 5
+    padding: 5,
+    color: '#4F4F4F'
   },
   buttons: {
     flex: 0.5
