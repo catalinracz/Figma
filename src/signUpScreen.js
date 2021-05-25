@@ -1,7 +1,13 @@
 import React from "react";
 import { Text, StyleSheet, View, TouchableOpacity, Image } from "react-native";
+import { useFonts } from '@expo-google-fonts/inter'
 
 const SingUpScreen = ({ navigation }) => {
+  let fonts = useFonts({
+    "DM-Sans": require("../assets/fonts/DMSans-Regular.ttf"),
+    "SF-Pro": require("../assets/fonts/SFPro.ttf"),
+  });
+
   return (
     <View style={styles.mainPage}>
       <View style={styles.artwork}>
@@ -40,15 +46,19 @@ const styles = StyleSheet.create({
     padding: 30
   },
   text: {
-    flex: 0.7
+    flex: 0.7,
   },
   title: {
     fontSize: 34,
     textAlign: "center",
+    fontFamily: 'DM-Sans',
+    fontWeight: 'bold'
   },
   underText: {
     fontSize: 17,
     textAlign: "center",
+    fontFamily: 'DM-Sans',
+    fontWeight: 'bold',
     padding: 5,
     color: '#4F4F4F'
   },
@@ -64,7 +74,8 @@ const styles = StyleSheet.create({
   },
   createButtonText: {
     color: "white",
-    fontSize: 17
+    fontSize: 17,
+    fontFamily: 'SF-Pro'
   },
   loginButton: {
     margin: 15
@@ -73,6 +84,7 @@ const styles = StyleSheet.create({
     color: "#31A062",
     fontSize: 17,
     textAlign: "center",
+    fontFamily: 'SF-Pro'
   },
 });
 
