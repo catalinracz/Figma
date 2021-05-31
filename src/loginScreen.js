@@ -21,7 +21,7 @@ const LoginScreen = ({ navigation }) => {
     <>
           <View style={styles.mainPage}>
             <View style={styles.backButton}>
-              <TouchableOpacity onPress={() => navigation.navigate("Sign")}>
+              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
                 <MaterialIcons name="arrow-back-ios" size={24} color="black" />
               </TouchableOpacity>
             </View>
@@ -49,7 +49,7 @@ const LoginScreen = ({ navigation }) => {
             <View style={styles.buttons}>
               <TouchableOpacity
                 style={styles.createButton}
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.navigate("Homepage")}
               >
                 <Text style={styles.createButtonText}>Create Account</Text>
               </TouchableOpacity>
