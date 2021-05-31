@@ -5,9 +5,11 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
 } from "react-native";
 import { useFonts } from "@expo-google-fonts/inter";
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from "@expo/vector-icons";
 
 const LoginScreen = ({ navigation }) => {
   let fonts = useFonts({
@@ -16,36 +18,49 @@ const LoginScreen = ({ navigation }) => {
   });
 
   return (
-    <View style={styles.mainPage}>
-      <View style={styles.backButton}>
-        <TouchableOpacity onPress={() => navigation.navigate('Sign')}>
-          <MaterialIcons name="arrow-back-ios" size={24} color="black" />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.text}>
-        <Text style={styles.title}>Create an account</Text>
-        <Text style={styles.subTitle}>Invest and double your income now</Text>
-      </View>
-      <View style={styles.inputs}>
-        <TextInput style={styles.nameInput} placeholder="Full name"></TextInput>
-        <TextInput
-          style={styles.emailInput}
-          placeholder="Email address"
-        ></TextInput>
-        <TextInput
-          style={styles.passwordInput}
-          placeholder="Password"
-        ></TextInput>
-      </View>
-      <View style={styles.buttons}>
-        <TouchableOpacity style={styles.createButton}>
-          <Text style={styles.createButtonText}>Create Account</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.alreadyButton}>
-          <Text style={styles.alreadyButtonText}>Already have an account?</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <>
+          <View style={styles.mainPage}>
+            <View style={styles.backButton}>
+              <TouchableOpacity onPress={() => navigation.navigate("Sign")}>
+                <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.text}>
+              <Text style={styles.title}>Create an account</Text>
+              <Text style={styles.subTitle}>
+                Invest and double your income now
+              </Text>
+            </View>
+            <View style={styles.inputs}>
+              <TextInput
+                style={styles.nameInput}
+                placeholder="Full name"
+              ></TextInput>
+              <TextInput
+                style={styles.emailInput}
+                placeholder="Email address"
+              ></TextInput>
+              <TextInput
+                style={styles.passwordInput}
+                secureTextEntry={true}
+                placeholder="Password"
+              ></TextInput>
+            </View>
+            <View style={styles.buttons}>
+              <TouchableOpacity
+                style={styles.createButton}
+                onPress={() => navigation.navigate("Home")}
+              >
+                <Text style={styles.createButtonText}>Create Account</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.alreadyButton}>
+                <Text style={styles.alreadyButtonText}>
+                  Already have an account?
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+    </>
   );
 };
 
@@ -57,7 +72,7 @@ const styles = StyleSheet.create({
   },
   backButton: {
     flex: 0.2,
-    marginTop: 10
+    marginTop: 20,
   },
   text: {
     flex: 0.7,
@@ -96,10 +111,10 @@ const styles = StyleSheet.create({
   },
   passwordInput: {
     fontFamily: "SF-Pro",
-    padding: 20
+    padding: 20,
   },
   buttons: {
-    flex: 0.9,
+    flex: 1,
   },
   createButton: {
     height: 60,
@@ -107,21 +122,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#31A062",
     borderRadius: 20,
     marginBottom: 44,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   createButtonText: {
     color: "white",
     fontSize: 17,
-    fontFamily: 'SF-Pro'
+    fontFamily: "SF-Pro",
   },
   alreadyButton: {
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: "center",
+    justifyContent: "center",
   },
   alreadyButtonText: {
     color: "#31A062",
     fontSize: 17,
-    fontFamily: 'SF-Pro'
+    fontFamily: "SF-Pro",
   },
 });
 
