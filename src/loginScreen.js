@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   buttons: {
-    flex: 1,
+    flex: 0.7,
   },
   createButton: {
     height: 60,
