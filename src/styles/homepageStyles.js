@@ -1,12 +1,6 @@
 import { StyleSheet } from "react-native";
-import { useFonts } from "@expo-google-fonts/inter";
+import { DMSans, SFPro } from '../components/fonts';
 
-const homeStyles = () => {
-  const fonts = useFonts({
-    "DM-Sans": require("../assets/fonts/DMSans-Regular.ttf"),
-    "SF-Pro": require("../assets/fonts/SFPro.ttf"),
-  });
-};
 
 export const styles = StyleSheet.create({
   homepage: {
@@ -25,7 +19,7 @@ export const styles = StyleSheet.create({
   exitButton: {},
   assetTitle: {
     fontSize: 22,
-    fontFamily: "DM-Sans",
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   buttons: {
@@ -35,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 34,
-    fontFamily: "DM-Sans",
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   portofolio: {
@@ -47,12 +41,12 @@ export const styles = StyleSheet.create({
   },
   portofolioText: {
     fontSize: 16,
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
     color: "white",
   },
   money: {
     fontSize: 32,
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
     fontWeight: "600",
     color: "white",
     marginTop: 11,
@@ -68,7 +62,7 @@ export const styles = StyleSheet.create({
     color: "#31A078",
     fontSize: 14,
     textAlign: "center",
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
     fontWeight: "600",
   },
   plans: {
@@ -92,12 +86,12 @@ export const styles = StyleSheet.create({
   gradeReturnText: {
     color: "white",
     fontSize: 17,
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
   },
   returnText: {
     color: "white",
     fontSize: 13,
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
   },
   guide: {
     marginTop: 48,
@@ -105,19 +99,19 @@ export const styles = StyleSheet.create({
   },
   guideText: {
     fontSize: 22,
-    fontFamily: "DM-Sans",
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   guideTitle: {
     color: "#4F4F4F",
     fontSize: 18,
     marginTop: 20,
-    fontFamily: "DM-Sans",
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   guideSubText: {
     color: "#474747",
-    fontFamily: "SF-Pro",
+    fontFamily: "SFPro",
     flex: 1
   },
   image: {

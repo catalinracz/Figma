@@ -78,7 +78,7 @@ const Homepage = () => {
             <View style={styles.plansSize}>
               <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                 <ImageBackground
-                  source={require("../assets/homepage/image4.png")}
+                  source={require("../../assets/homepage/image4.png")}
                   style={styles.plansSize}
                 >
                   <View style={styles.insidePlansText}>
@@ -90,7 +90,7 @@ const Homepage = () => {
             </View>
             <TouchableOpacity>
               <ImageBackground
-                source={require("../assets/homepage/image5.png")}
+                source={require("../../assets/homepage/image5.png")}
                 style={styles.plansSize}
               >
                 <View style={styles.insidePlansText}>
@@ -126,7 +126,7 @@ const Homepage = () => {
                 What's next...
               </Text>
               <View style={styles.image}>
-                <Image source={require("../assets/homepage/Ellipse740.png")} />
+                <Image source={require("../../assets/homepage/Ellipse740.png")} />
               </View>
             </View>
           </View>
@@ -140,7 +140,7 @@ const Homepage = () => {
                 The way...
               </Text>
               <View style={styles.image}>
-                <Image source={require("../assets/homepage/Ellipse741.png")} />
+                <Image source={require("../../assets/homepage/Ellipse741.png")} />
               </View>
             </View>
           </View>
