@@ -1,13 +1,22 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { styles } from '../styles/profileScreensStyles';
 import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
+  const navigateToHomepage = () => {
+    navigation.navigate('Home');
+  }
+  const navigateToContact = () => {
+    navigation.navigate('Contact');
+  }
+
   return (
     <View style={styles.profile}>
-      <TouchableOpacity>
-        <MaterialIcons name="arrow-back-ios" size={24} color="black" />
+      <ScrollView>
+      <TouchableOpacity style={styles.backbutton} onPress={navigateToHomepage}>
+        <MaterialIcons name="arrow-back-ios" size={22} color="black" />
       </TouchableOpacity>
       <Text style={styles.profileTitle}>Profile</Text>
       <View style={styles.picture}>
@@ -16,22 +25,33 @@ const Profile = () => {
         <Text style={styles.grade}>Expert</Text>
       </View>
       <View style={styles.buttons}>
-        <TouchableOpacity style={styles.button}>
-          <Text>Contact Info</Text>
+        <TouchableOpacity style={styles.button} onPress={navigateToContact}>
+          <FontAwesome name="info-circle" size={18} color="#333333" />
+            <Text style={styles.buttonText}>Contact Info</Text>
+          <MaterialIcons name="arrow-forward-ios" size={17} color="#333333" style={styles.arrow} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text>Source of Funding Info</Text>
+          <FontAwesome name="money" size={17} color="#333333" />
+          <Text style={styles.buttonText}>Source of Funding Info</Text>
+          <MaterialIcons name="arrow-forward-ios" size={17} color="#333333" style={styles.arrow} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text>Bank Account Info</Text>
+          <FontAwesome name="bank" size={17} color="#333333" />
+          <Text style={styles.buttonText}>Bank Account Info</Text>
+          <MaterialIcons name="arrow-forward-ios" size={17} color="#333333" style={styles.arrow} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text>Document Info</Text>
+          <FontAwesome name="file-o" size={17} color="#333333" />
+          <Text style={styles.buttonText}>Document Info</Text>
+          <MaterialIcons name="arrow-forward-ios" size={17} color="#333333" style={styles.arrow} />
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text>Settings</Text>
+          <FontAwesome name="gear" size={18} color="#333333" />
+          <Text style={styles.buttonText}>Settings</Text>
+          <MaterialIcons name="arrow-forward-ios" size={17} color="#333333" style={styles.arrow} />
         </TouchableOpacity>
       </View>
+      </ScrollView>
     </View>
   )
 }
