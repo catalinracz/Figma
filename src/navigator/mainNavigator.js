@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomepageTab from '../screens/homepage';
 import LoginScreen from '../screens/loginScreen';
 import SingUpScreen from '../screens/signUpScreen';
+import Contact from '../screens/contactInfoScreen';
 import roots from './roots';
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ function MainStack() {
         <Stack.Screen name={roots.signupScreen} component={SingUpScreen} />
         <Stack.Screen name={roots.loginScreen} component={LoginScreen} />
         <Stack.Screen name={roots.homeScreen} component={HomepageTab} />
+        <Stack.Screen name={roots.contactInfoScreen} component={Contact} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -22,7 +22,7 @@ const Homepage = () => {
   const [modalVisible, setModalVisible] = useState('');
 
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.homepage}>
         <View style={styles.buttons}>
           <TouchableOpacity style={styles.menuButton}>
@@ -72,10 +72,9 @@ const Homepage = () => {
           </View>
           <ScrollView
             horizontal={true}
-            contentContainerStyle={styles.plansList}
             showsHorizontalScrollIndicator={false}
           >
-            <View style={styles.plansSize}>
+            <View>
               <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                 <ImageBackground
                   source={require("../../assets/homepage/image4.png")}
@@ -117,32 +116,36 @@ const Homepage = () => {
         <View style={styles.guide}>
           <Text style={styles.guideText}>Investment Guide</Text>
           <View style={{ borderColor: "#4A4A4A", borderBottomWidth: 1 }}>
-            <Text style={styles.guideTitle}>Basic type of investments</Text>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
-              <Text style={styles.guideSubText}>
+              <View style={styles.guideTextContainer}>
+                <Text style={styles.guideTitle}>Basic type of investments</Text>
+                <Text style={styles.guideSubText}>
                 This is how you set your foot for 2020. Stock market recession.
                 What's next...
-              </Text>
+                </Text>
+              </View>
               <View style={styles.image}>
                 <Image source={require("../../assets/homepage/Ellipse740.png")} />
               </View>
             </View>
           </View>
           <View>
-            <Text style={styles.guideTitle}>How Much can you start with</Text>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
-              <Text style={styles.guideSubText}>
+              <View style={styles.guideTextContainer}>
+                <Text style={styles.guideTitle}>How Much can you start with</Text>
+                <Text style={styles.guideSubText}>
                 What do you like to see? It's a very different market from 2018.
                 The way...
-              </Text>
+                </Text>
+              </View>
               <View style={styles.image}>
                 <Image source={require("../../assets/homepage/Ellipse741.png")} />
               </View>
-            </View>
+              </View>
           </View>
         </View>
         <Modal animationType="slide" visible={modalVisible}>

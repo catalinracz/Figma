@@ -19,13 +19,13 @@ export const styles = StyleSheet.create({
     title: {
       fontSize: 34,
       textAlign: "center",
-      fontFamily: 'DM-Sans',
+      fontFamily: DMSans,
       fontWeight: 'bold'
     },
     underText: {
       fontSize: 17,
       textAlign: "center",
-      fontFamily: 'DM-Sans',
+      fontFamily: DMSans,
       fontWeight: 'bold',
       padding: 5,
       color: '#4F4F4F'
@@ -43,7 +43,7 @@ export const styles = StyleSheet.create({
     createButtonText: {
       color: "white",
       fontSize: 17,
-      fontFamily: 'SF-Pro'
+      fontFamily: SFPro
     },
     loginButton: {
       margin: 15
@@ -52,6 +52,6 @@ export const styles = StyleSheet.create({
       color: "#31A062",
       fontSize: 17,
       textAlign: "center",
-      fontFamily: 'SF-Pro'
+      fontFamily: SFPro
     },
   });

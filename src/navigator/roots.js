@@ -1,7 +1,8 @@
 const roots = {
   signupScreen:'SignUp',
   homeScreen:'Home',
-  loginScreen:'LogIn'
+  loginScreen:'LogIn',
+  contactInfoScreen: 'Contact'
 };
 
 export default roots;

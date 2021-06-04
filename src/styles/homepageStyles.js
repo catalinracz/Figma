@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
   exitButton: {},
   assetTitle: {
     fontSize: 22,
-    fontFamily: "DMSans",
+    fontFamily: DMSans,
     fontWeight: "bold",
   },
   buttons: {
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 34,
-    fontFamily: "DMSans",
+    fontFamily: DMSans,
     fontWeight: "bold",
   },
   portofolio: {
@@ -41,12 +41,12 @@ export const styles = StyleSheet.create({
   },
   portofolioText: {
     fontSize: 16,
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
     color: "white",
   },
   money: {
     fontSize: 32,
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
     fontWeight: "600",
     color: "white",
     marginTop: 11,
@@ -62,12 +62,13 @@ export const styles = StyleSheet.create({
     color: "#31A078",
     fontSize: 14,
     textAlign: "center",
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
     fontWeight: "600",
   },
   plans: {
     marginTop: 40,
-    flex: 1
+    flex: 1,
+    marginRight: -30
   },
   plansText: {
     flexDirection: "row",
@@ -79,6 +80,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   seeAllText: {
+    marginRight: 30,
     fontSize: 18,
     color: "#FE555D",
     fontWeight: "500",
@@ -86,12 +88,12 @@ export const styles = StyleSheet.create({
   gradeReturnText: {
     color: "white",
     fontSize: 17,
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
   },
   returnText: {
     color: "white",
     fontSize: 13,
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
   },
   guide: {
     marginTop: 48,
@@ -99,22 +101,23 @@ export const styles = StyleSheet.create({
   },
   guideText: {
     fontSize: 22,
-    fontFamily: "DMSans",
+    fontFamily: DMSans,
     fontWeight: "bold",
   },
   guideTitle: {
     color: "#4F4F4F",
     fontSize: 18,
     marginTop: 20,
-    fontFamily: "DMSans",
+    fontFamily: DMSans,
     fontWeight: "bold",
   },
   guideSubText: {
     color: "#474747",
-    fontFamily: "SFPro",
+    fontFamily: SFPro,
     flex: 1
   },
   image: {
+    alignSelf: 'center'
   },
   plansSize: {
     width: 134,
@@ -124,5 +127,10 @@ export const styles = StyleSheet.create({
   },
   insidePlansText: {
     padding: 17
+  },
+  guideTextContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    marginBottom: 23
   }
 });
