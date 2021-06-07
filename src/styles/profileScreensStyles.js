@@ -41,7 +41,8 @@ export const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    elevation: 2
   },
   buttonText: {
     fontSize: 17,
