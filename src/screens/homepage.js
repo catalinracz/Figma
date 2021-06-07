@@ -11,6 +11,7 @@ import {
 import { MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
+import { Entypo } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Profile from "./profileScreen";
 import Product from "./productScreen";
@@ -40,10 +41,7 @@ const Homepage = () => {
             colors={["#31A05F", "#31A078"]}
             start={[0, 0.4947]}
             end={[0.9575, 0]}
-            style={{
-              borderRadius: 20,
-              padding: 25,
-            }}
+            style={styles.portofolioGradient}
           >
             <Text style={styles.portofolioText}>
               Your total asset potofolio
@@ -149,6 +147,7 @@ const Homepage = () => {
           </View>
         </View>
         <Modal animationType="slide" visible={modalVisible}>
+          <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.assetPage}>
             <View style={styles.topAsset}>
               <Text> </Text>
@@ -160,7 +159,50 @@ const Homepage = () => {
                 <AntDesign name="closecircle" size={24} color="#B3B3B3" />
               </TouchableOpacity>
             </View>
+            <Text style={styles.subTitle}>Your total asset portofolio</Text>
+            <View style={styles.moneyRow}>
+              <Text style={styles.moneyCount}>N203,935</Text>
+              <Text style={styles.profit}><Entypo name="arrow-bold-up" size={18} color="#00B907" /> +2%</Text>
+            </View>
+            <Text style={styles.currentPlans}>Current Plans</Text>
+            <ImageBackground style={styles.planImageSize} source={require('../../assets/asset/asset1.png')}>
+              <Text style={styles.goldText}>Gold</Text>
+              <Text style={styles.profitReturn}>30% return</Text>
+            </ImageBackground>
+            <TouchableOpacity>
+              <Text style={styles.seeAllPlans}>See All Plans <AntDesign name="arrowright" size={18} color="#FE555D" /></Text>
+            </TouchableOpacity>
+            <Text style={styles.historyTitle}>History</Text>
+            <View style={styles.history}>
+              <Text style={styles.blackRp}>Rp 200.000</Text>
+              <View style={styles.buyDate}>
+                <Text style={styles.buy}>Buy "APPL" Stock</Text>
+                <Text style={styles.date}>TUE 22 Jun 2020</Text>
+              </View>
+            </View>
+            <View style={styles.history}>
+              <Text style={styles.greenRp}>Rp 200.000</Text>
+              <View style={styles.buyDate}>
+                <Text style={styles.buy}>Buy "APPL" Stock</Text>
+                <Text style={styles.date}>TUE 22 Jun 2020</Text>
+              </View>
+            </View>
+            <View style={styles.history}>
+              <Text style={styles.blackRp}>Rp 200.000</Text>
+              <View style={styles.buyDate}>
+                <Text style={styles.buy}>Buy "APPL" Stock</Text>
+                <Text style={styles.date}>TUE 22 Jun 2020</Text>
+              </View>
+            </View>
+            <View style={styles.history}>
+              <Text style={styles.greenRp}>Rp 200.000</Text>
+              <View style={styles.buyDate}>
+                <Text style={styles.buy}>Buy "APPL" Stock</Text>
+                <Text style={styles.date}>TUE 22 Jun 2020</Text>
+              </View>
+            </View>
           </View>
+          </ScrollView>
         </Modal>
       </View>
     </ScrollView>
