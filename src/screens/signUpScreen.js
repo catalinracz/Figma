@@ -1,38 +1,38 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
-import { styles } from '../styles/signUpScreensStyles';
+import { Images } from "../components/images";
+import { styles } from "../styles/signUpScreensStyles";
+import { signText } from "../text/text";
 
-const SingUpScreen = ({ navigation }) => {
-  const navigateToLoginScreen = () => {
-    navigation.navigate('LogIn');
+const SingUpScreen = () => {
+  const navigator = useNavigation();
+  const navigateToScreen = () => {
+    navigator.navigate("LogIn");
   };
 
   return (
     <View style={styles.mainPage}>
       <View style={styles.artwork}>
-        <Image source={require("../../assets/signup/SingUpArtwork.png")} />
+        <Image source={Images.signUp} />
       </View>
       <View style={styles.text}>
-        <Text style={styles.title}>Stay on top of your finance with us.</Text>
-        <Text style={styles.underText}>
-          We are your new financial Advisors to recommend the best investemnts
-          for you.
-        </Text>
+        <Text style={styles.title}>{signText.signTitle}</Text>
+        <Text style={styles.underText}>{signText.signSubTitle}</Text>
       </View>
       <View style={styles.buttons}>
-        <TouchableOpacity style={styles.createButton}
-        onPress={navigateToLoginScreen}
+        <TouchableOpacity
+          style={styles.createButton}
+          onPress={navigateToScreen}
         >
-          <Text style={styles.createButtonText}>Create account</Text>
+          <Text style={styles.createButtonText}>{signText.signCreate}</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginButtonText}>Login</Text>
+          <Text style={styles.loginButtonText}>{signText.signLogin}</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
-
-
 
 export default SingUpScreen;
