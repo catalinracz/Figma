@@ -1,41 +1,50 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { MaterialIcons } from "@expo/vector-icons";
-import { styles } from '../styles/bankAccountScreenStyles';
+import React from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { styles } from "../styles/bankAccountScreenStyles";
+import { useNavigation } from "@react-navigation/native";
+import { Images } from "../components/images";
+import { bankText } from "../text/text";
+import BankLines from "../components/bankAccountLines";
 
-const BankAccount = ({ navigation }) => {
-  const navigateToProfile = () => {
-    navigation.navigate('Account')
-  }
+const BankAccount = () => {
+  const navigator = useNavigation();
+  const navigateBack = () => {
+    navigator.goBack();
+  };
+
+  const _bankArray = [
+    {
+      imgBank: Images.bankImage1,
+      bank: bankText.bank1,
+      names: bankText.bankName,
+      more: Images.more,
+    },
+    {
+      imgBank: Images.bankImage2,
+      bank: bankText.bank2,
+      names: bankText.bankName,
+      more: Images.more,
+    },
+  ];
+
   return (
     <View style={styles.bankAccount}>
       <View style={styles.title}>
-        <TouchableOpacity onPress={navigateToProfile}>
-          <MaterialIcons name="arrow-back-ios" size={22} color="black" />
+        <TouchableOpacity onPress={navigateBack}>
+          <Image source={Images.leftArrow} />
         </TouchableOpacity>
-        <Text style={styles.titleText}>Bank of account info</Text>
+        <Text style={styles.titleText}>{bankText.bankTitle}</Text>
         <Text></Text>
       </View>
-      <View style={styles.banks}>
-        <Image source={require('../../assets/bank/image1.png')} style={styles.image}/>
-          <View style={styles.text}>
-            <Text style={styles.bankName}>Bank of Amrica - 0182128xxx</Text>
-            <Text style={styles.name}>Jonas Macroni</Text>
-          </View>
-        <TouchableOpacity style={styles.moreButton}>
-          <MaterialIcons name="more-vert" size={24} color="#333333" />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.banks}>
-        <Image source={require('../../assets/bank/image2.png')} style={styles.image}/>
-          <View style={styles.text}>
-            <Text style={styles.bankName}>Zenith Bank - 0182128xxx</Text>
-            <Text style={styles.name}>Jonas Macroni</Text>
-          </View>
-        <TouchableOpacity style={styles.moreButton}>
-          <MaterialIcons name="more-vert" size={24} color="#333333" />
-        </TouchableOpacity>
-      </View>
+      {_bankArray.map((x, index) => (
+        <BankLines
+          key={index}
+          imgBank={x.imgBank}
+          bank={x.bank}
+          names={x.names}
+          more={x.more}
+        />
+      ))}
       <View style={styles.addAccountButton}>
         <TouchableOpacity>
           <Text style={styles.addAccountButtonText}>Add account</Text>

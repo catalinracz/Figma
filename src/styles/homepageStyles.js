@@ -1,15 +1,16 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../components/colors";
 
 export const styles = StyleSheet.create({
   homepage: {
-    backgroundColor: "#F6F6F9",
+    backgroundColor: colors.WHITEISH,
     padding: 30,
     flex: 1,
   },
   assetPage: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    padding: 30
+    backgroundColor: colors.WHITE,
+    padding: 30,
   },
   topAsset: {
     flexDirection: "row",
@@ -18,100 +19,100 @@ export const styles = StyleSheet.create({
   assetTitle: {
     marginBottom: 29,
     fontSize: 22,
-    fontFamily: 'DMSans',
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   subTitle: {
     fontSize: 16,
-    fontWeight: '600',
-    fontFamily: 'SFPro',
-    color: '#B3B3B3'
+    fontWeight: "600",
+    fontFamily: "SFPro",
+    color: colors.GRAY,
   },
   moneyRow: {
-    flexDirection: 'row'
+    flexDirection: "row",
   },
   moneyCount: {
     fontSize: 32,
-    fontWeight: '600',
-    fontFamily: 'SFPro',
+    fontWeight: "600",
+    fontFamily: "SFPro",
     marginRight: 41,
   },
   profit: {
     fontSize: 10.6667,
-    fontFamily: 'SFPro',
-    color: '#00B907',
-    alignSelf: 'center'
+    fontFamily: "SFPro",
+    color: colors.LIGHT_GREEN,
+    alignSelf: "center",
   },
   currentPlans: {
     flex: 0.5,
     fontSize: 22,
-    fontWeight: 'bold',
-    fontFamily: 'DMSans',
+    fontWeight: "bold",
+    fontFamily: "DMSans",
     marginTop: 40,
-    marginBottom: 20
+    marginBottom: 20,
   },
   planImageSize: {
     width: 354,
     height: 207,
     padding: 28,
     flex: 1,
-    marginBottom: 25
+    marginBottom: 25,
   },
   goldText: {
     fontSize: 18,
-    fontFamily: 'SFPro',
-    fontWeight: '600'
+    fontFamily: "SFPro",
+    fontWeight: "600",
   },
   profitReturn: {
     fontSize: 13,
-    fontWeight: '600',
-    fontFamily: 'SFPro',
-    color: '#0B2517'
+    fontWeight: "600",
+    fontFamily: "SFPro",
+    color: colors.VERY_DARK_GREEN,
   },
   seeAllPlans: {
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
     fontSize: 18,
-    fontWeight: '500',
-    color: '#FE555D',
-    textAlign: 'center'
+    fontWeight: "500",
+    color: colors.PINK,
+    textAlign: "center",
   },
   historyTitle: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 22,
-    fontFamily: 'DMSans',
+    fontFamily: "DMSans",
     marginBottom: 20,
-    marginTop: 30
+    marginTop: 30,
   },
   history: {
-    borderBottomColor: '#E7E7E7',
+    borderBottomColor: colors.LIGHT_GRAY,
     borderBottomWidth: 1,
-    marginBottom: 10
+    marginBottom: 10,
   },
   blackRp: {
     fontSize: 18,
-    fontWeight: 'bold',
-    fontFamily: 'DMSans'
+    fontWeight: "bold",
+    fontFamily: "DMSans",
   },
   greenRp: {
     fontSize: 18,
-    fontWeight: 'bold',
-    fontFamily: 'DMSans',
-    color: '#00B907'
+    fontWeight: "bold",
+    fontFamily: "DMSans",
+    color: colors.LIGHT_GREEN,
   },
   buyDate: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 10  
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginBottom: 10,
   },
   buy: {
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
     fontSize: 14,
-    color: '#B3B3B3'
+    color: colors.GRAY,
   },
   date: {
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
     fontSize: 14,
-    color: '#B3B3B3'
+    color: colors.GRAY,
   },
   buttons: {
     flexDirection: "row",
@@ -120,7 +121,7 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 34,
-    fontFamily: 'DMSans',
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   portofolio: {
@@ -129,32 +130,32 @@ export const styles = StyleSheet.create({
   portofolioGradient: {
     borderRadius: 20,
     padding: 25,
-    elevation: 21
+    elevation: 21,
   },
   portofolioText: {
     fontSize: 16,
-    fontFamily: 'SFPro',
-    color: "white",
+    fontFamily: "SFPro",
+    color: colors.WHITE,
   },
   money: {
     fontSize: 32,
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
     fontWeight: "600",
-    color: "white",
+    color: colors.WHITE,
     marginTop: 11,
   },
   investButton: {
     padding: 10,
     alignSelf: "flex-end",
-    backgroundColor: "white",
+    backgroundColor: colors.WHITE,
     borderRadius: 15,
     flex: 0.8,
   },
   investButtonText: {
-    color: "#31A078",
+    color: colors.TURQUOISE,
     fontSize: 14,
     textAlign: "center",
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
     fontWeight: "600",
   },
   plans: {
@@ -174,18 +175,18 @@ export const styles = StyleSheet.create({
   seeAllText: {
     marginRight: 30,
     fontSize: 18,
-    color: "#FE555D",
+    color: colors.PINK,
     fontWeight: "500",
   },
   gradeReturnText: {
-    color: "white",
+    color: colors.WHITE,
     fontSize: 17,
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
   },
   returnText: {
-    color: "white",
+    color: colors.WHITE,
     fontSize: 13,
-    fontFamily: 'SFPro',
+    fontFamily: "SFPro",
   },
   guide: {
     marginTop: 48,
@@ -193,19 +194,19 @@ export const styles = StyleSheet.create({
   },
   guideText: {
     fontSize: 22,
-    fontFamily: 'DMSans',
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   guideTitle: {
-    color: "#4F4F4F",
+    color: colors.LIGHTER_DARK_GRAY,
     fontSize: 18,
     marginTop: 20,
-    fontFamily: 'DMSans',
+    fontFamily: "DMSans",
     fontWeight: "bold",
   },
   guideSubText: {
-    color: "#474747",
-    fontFamily: 'SFPro',
+    color: colors.DARK_GRAY,
+    fontFamily: "SFPro",
     flex: 1,
   },
   image: {

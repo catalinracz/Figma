@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { DMSans, SFPro } from "../components/fonts";
+import { colors } from "../components/colors";
 
 export const styles = StyleSheet.create({
   contact: {
-    backgroundColor: "#F8F8F9",
+    backgroundColor: colors.VERY_LIGHT_GRAY,
     flex: 1,
     padding: 30,
   },
@@ -16,8 +16,7 @@ export const styles = StyleSheet.create({
   titleText: {
     fontSize: 17,
     fontWeight: "600",
-    fontFamily: SFPro,
-    marginLeft: -20,
+    fontFamily: "SFPro",
   },
   image: {
     alignSelf: "center",
@@ -34,31 +33,31 @@ export const styles = StyleSheet.create({
   lines: {
     flexDirection: "row",
     justifyContent: "space-between",
-    borderColor: "#000000",
+    borderColor: colors.BLACK,
     borderBottomWidth: 0.5,
     marginBottom: 20,
   },
   noBottomBorder: {
     flexDirection: "row",
     justifyContent: "space-between",
-    borderColor: "#000000",
+    borderColor: colors.BLACK,
     borderBottomWidth: 0.5,
     marginBottom: 20,
-    borderBottomWidth: 0
+    borderBottomWidth: 0,
   },
   subTitle: {
     fontSize: 12,
-    color: "#333333",
+    color: colors.DARK_GRAY2,
   },
   buttonText: {
     fontSize: 10,
-    fontFamily: SFPro,
-    color: "#31A05F",
+    fontFamily: "SFPro",
+    color: colors.TURQUOISE3,
   },
   content: {
     fontSize: 17,
-    color: "#333333",
-    fontFamily: SFPro,
+    color: colors.DARK_GRAY2,
+    fontFamily: "SFPro",
   },
   editButton: {
     alignSelf: "center",

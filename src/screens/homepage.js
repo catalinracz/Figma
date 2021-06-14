@@ -8,33 +8,61 @@ import {
   Image,
   Modal,
 } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Profile from "./profileScreen";
 import Product from "./productScreen";
 import Transaction from "./transactionScreen";
 import { styles } from "../styles/homepageStyles";
+import { Images } from "../components/images";
+import { homeText } from "../text/text";
+import AssetHistory from "../components/assetHistory";
 
 const Tab = createBottomTabNavigator();
 const Homepage = () => {
-  const [modalVisible, setModalVisible] = useState('');
+  const [modalVisible, setModalVisible] = useState("");
+
+  const _assetArray = [
+    {
+      price: homeText.price1,
+      color: styles.blackRp,
+      stock: homeText.buyappl,
+      time: homeText.time,
+    },
+    {
+      price: homeText.price2,
+      color: styles.greenRp,
+      stock: homeText.tlkm,
+      time: homeText.time,
+    },
+    {
+      price: homeText.price3,
+      color: styles.blackRp,
+      stock: homeText.fb,
+      time: homeText.time,
+    },
+    {
+      price: homeText.price3,
+      color: styles.greenRp,
+      stock: homeText.sellappl,
+      time: homeText.time,
+    },
+  ];
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.homepage}>
         <View style={styles.buttons}>
           <TouchableOpacity style={styles.menuButton}>
-            <MaterialIcons name="menu" size={24} color="black" />
+            <Image source={Images.menu} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.notifButton}>
-            <MaterialIcons name="notifications-none" size={24} color="black" />
+            <Image source={Images.notif} />
           </TouchableOpacity>
         </View>
         <View style={styles.text}>
-          <Text style={styles.title}>Welcome, Jessie.</Text>
+          <Text style={styles.title}>{homeText.title}</Text>
         </View>
         <View style={styles.portofolio}>
           <LinearGradient
@@ -43,16 +71,14 @@ const Homepage = () => {
             end={[0.9575, 0]}
             style={styles.portofolioGradient}
           >
-            <Text style={styles.portofolioText}>
-              Your total asset potofolio
-            </Text>
+            <Text style={styles.portofolioText}>{homeText.portofolio}</Text>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
-              <Text style={styles.money}>N203,935</Text>
+              <Text style={styles.money}>{homeText.money}</Text>
               <View style={styles.investButton}>
                 <TouchableOpacity>
-                  <Text style={styles.investButtonText}>Invest now</Text>
+                  <Text style={styles.investButtonText}>{homeText.invest}</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -60,39 +86,36 @@ const Homepage = () => {
         </View>
         <View style={styles.plans}>
           <View style={styles.plansText}>
-            <Text style={styles.bestPlansText}>Best Plans</Text>
+            <Text style={styles.bestPlansText}>{homeText.best}</Text>
             <TouchableOpacity>
               <Text style={styles.seeAllText}>
-                See All
-                <AntDesign name="arrowright" size={18} color="#FE555D" />
+                {homeText.see}
+                <Image source={Images.rightArrow} />
               </Text>
             </TouchableOpacity>
           </View>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          >
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View>
               <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
                 <ImageBackground
-                  source={require("../../assets/homepage/image4.png")}
+                  source={Images.gradient1}
                   style={styles.plansSize}
                 >
                   <View style={styles.insidePlansText}>
-                    <Text style={styles.gradeReturnText}>Gold</Text>
-                    <Text style={styles.returnText}>30% return</Text>
+                    <Text style={styles.gradeReturnText}>{homeText.gold}</Text>
+                    <Text style={styles.returnText}>{homeText.return1}</Text>
                   </View>
                 </ImageBackground>
               </TouchableOpacity>
             </View>
             <TouchableOpacity>
               <ImageBackground
-                source={require("../../assets/homepage/image5.png")}
+                source={Images.gradient2}
                 style={styles.plansSize}
               >
                 <View style={styles.insidePlansText}>
-                  <Text style={styles.gradeReturnText}>Silver</Text>
-                  <Text style={styles.returnText}>60% return</Text>
+                  <Text style={styles.gradeReturnText}>{homeText.silver}</Text>
+                  <Text style={styles.returnText}>{homeText.return2}</Text>
                 </View>
               </ImageBackground>
             </TouchableOpacity>
@@ -104,28 +127,27 @@ const Homepage = () => {
                 style={styles.plansSize}
               >
                 <View style={styles.insidePlansText}>
-                  <Text style={styles.gradeReturnText}>Platinum</Text>
-                  <Text style={styles.returnText}>90% return</Text>
+                  <Text style={styles.gradeReturnText}>
+                    {homeText.platinum}
+                  </Text>
+                  <Text style={styles.returnText}>{homeText.return3}</Text>
                 </View>
               </LinearGradient>
             </TouchableOpacity>
           </ScrollView>
         </View>
         <View style={styles.guide}>
-          <Text style={styles.guideText}>Investment Guide</Text>
+          <Text style={styles.guideText}>{homeText.gdTitle}</Text>
           <View style={{ borderColor: "#4A4A4A", borderBottomWidth: 1 }}>
             <View
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
               <View style={styles.guideTextContainer}>
-                <Text style={styles.guideTitle}>Basic type of investments</Text>
-                <Text style={styles.guideSubText}>
-                This is how you set your foot for 2020. Stock market recession.
-                What's next...
-                </Text>
+                <Text style={styles.guideTitle}>{homeText.gdSub1}</Text>
+                <Text style={styles.guideSubText}>{homeText.gdText1}</Text>
               </View>
               <View style={styles.image}>
-                <Image source={require("../../assets/homepage/Ellipse740.png")} />
+                <Image source={Images.ellipse1} />
               </View>
             </View>
           </View>
@@ -134,74 +156,60 @@ const Homepage = () => {
               style={{ flexDirection: "row", justifyContent: "space-between" }}
             >
               <View style={styles.guideTextContainer}>
-                <Text style={styles.guideTitle}>How Much can you start with</Text>
-                <Text style={styles.guideSubText}>
-                What do you like to see? It's a very different market from 2018.
-                The way...
-                </Text>
+                <Text style={styles.guideTitle}>{homeText.gdSub2}</Text>
+                <Text style={styles.guideSubText}>{homeText.gdText2}</Text>
               </View>
               <View style={styles.image}>
-                <Image source={require("../../assets/homepage/Ellipse741.png")} />
+                <Image source={Images.ellipse2} />
               </View>
-              </View>
+            </View>
           </View>
         </View>
         <Modal animationType="slide" visible={modalVisible}>
           <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.assetPage}>
-            <View style={styles.topAsset}>
-              <Text> </Text>
-              <Text style={styles.assetTitle}>My Asset</Text>
-              <TouchableOpacity
-                style={styles.exitButton}
-                onPress={() => setModalVisible(!modalVisible)}
+            <View style={styles.assetPage}>
+              <View style={styles.topAsset}>
+                <Text> </Text>
+                <Text style={styles.assetTitle}>{homeText.assetTitle}</Text>
+                <TouchableOpacity
+                  style={styles.exitButton}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={Images.exit} />
+                </TouchableOpacity>
+              </View>
+              <Text style={styles.subTitle}>{homeText.portofolio}</Text>
+              <View style={styles.moneyRow}>
+                <Text style={styles.moneyCount}>{homeText.money}</Text>
+                <Text style={styles.profit}>
+                  <Image source={Images.up} /> {homeText.percent}
+                </Text>
+              </View>
+              <Text style={styles.currentPlans}>{homeText.assetPlans}</Text>
+              <ImageBackground
+                style={styles.planImageSize}
+                source={Images.assetImg}
               >
-                <AntDesign name="closecircle" size={24} color="#B3B3B3" />
+                <Text style={styles.goldText}>{homeText.gold}</Text>
+                <Text style={styles.profitReturn}>{homeText.return1}</Text>
+              </ImageBackground>
+              <TouchableOpacity>
+                <Text style={styles.seeAllPlans}>
+                  {homeText.seePlans}
+                  <AntDesign name="arrowright" size={18} color="#FE555D" />
+                </Text>
               </TouchableOpacity>
+              <Text style={styles.historyTitle}>{homeText.historyTitle}</Text>
+              {_assetArray.map((x, index) => (
+                <AssetHistory
+                  key={index}
+                  price={x.price}
+                  color={x.color}
+                  stock={x.stock}
+                  time={x.time}
+                />
+              ))}
             </View>
-            <Text style={styles.subTitle}>Your total asset portofolio</Text>
-            <View style={styles.moneyRow}>
-              <Text style={styles.moneyCount}>N203,935</Text>
-              <Text style={styles.profit}><Entypo name="arrow-bold-up" size={18} color="#00B907" /> +2%</Text>
-            </View>
-            <Text style={styles.currentPlans}>Current Plans</Text>
-            <ImageBackground style={styles.planImageSize} source={require('../../assets/asset/asset1.png')}>
-              <Text style={styles.goldText}>Gold</Text>
-              <Text style={styles.profitReturn}>30% return</Text>
-            </ImageBackground>
-            <TouchableOpacity>
-              <Text style={styles.seeAllPlans}>See All Plans <AntDesign name="arrowright" size={18} color="#FE555D" /></Text>
-            </TouchableOpacity>
-            <Text style={styles.historyTitle}>History</Text>
-            <View style={styles.history}>
-              <Text style={styles.blackRp}>Rp 200.000</Text>
-              <View style={styles.buyDate}>
-                <Text style={styles.buy}>Buy "APPL" Stock</Text>
-                <Text style={styles.date}>TUE 22 Jun 2020</Text>
-              </View>
-            </View>
-            <View style={styles.history}>
-              <Text style={styles.greenRp}>Rp 200.000</Text>
-              <View style={styles.buyDate}>
-                <Text style={styles.buy}>Buy "APPL" Stock</Text>
-                <Text style={styles.date}>TUE 22 Jun 2020</Text>
-              </View>
-            </View>
-            <View style={styles.history}>
-              <Text style={styles.blackRp}>Rp 200.000</Text>
-              <View style={styles.buyDate}>
-                <Text style={styles.buy}>Buy "APPL" Stock</Text>
-                <Text style={styles.date}>TUE 22 Jun 2020</Text>
-              </View>
-            </View>
-            <View style={styles.history}>
-              <Text style={styles.greenRp}>Rp 200.000</Text>
-              <View style={styles.buyDate}>
-                <Text style={styles.buy}>Buy "APPL" Stock</Text>
-                <Text style={styles.date}>TUE 22 Jun 2020</Text>
-              </View>
-            </View>
-          </View>
           </ScrollView>
         </Modal>
       </View>
@@ -216,30 +224,28 @@ const HomepageTab = () => {
         name="Home"
         component={Homepage}
         options={{
-          tabBarIcon: () => <AntDesign name="home" size={24} color="#999999" />,
+          tabBarIcon: () => <Image source={Images.homeTab} />,
         }}
       />
       <Tab.Screen
         name="Product"
         component={Product}
         options={{
-          tabBarIcon: () => (
-            <AntDesign name="search1" size={24} color="#999999" />
-          ),
+          tabBarIcon: () => <Image source={Images.searchTab} />,
         }}
       />
       <Tab.Screen
         name="Transaction"
         component={Transaction}
         options={{
-          tabBarIcon: () => <AntDesign name="swap" size={24} color="#999999" />,
+          tabBarIcon: () => <Image source={Images.transactionTab} />,
         }}
       />
       <Tab.Screen
         name="Account"
         component={Profile}
         options={{
-          tabBarIcon: () => <AntDesign name="user" size={24} color="#999999" />,
+          tabBarIcon: () => <Image source={Images.profileTab} />,
         }}
       />
     </Tab.Navigator>

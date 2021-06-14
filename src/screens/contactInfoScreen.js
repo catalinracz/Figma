@@ -5,95 +5,80 @@ import {
   TouchableOpacity,
   ImageBackground,
   Image,
-  ScrollView
 } from "react-native";
 import { styles } from "../styles/contactScreenStyles";
-import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { Images } from "../components/images";
+import { ctText } from "../text/text";
+import ContactLines from "../components/contactLines";
 
-const Contact = ({ navigation }) => {
-  const navigateToProfile = () => {
-    navigation.navigate("Account");
+const Contact = () => {
+  const navigator = useNavigation();
+  const navigateBack = () => {
+    navigator.goBack();
   };
+
+  const _contactArray = [
+    {
+      sub: ctText.ctName,
+      contents: ctText.ctNameText,
+      bttnText: ctText.ctChangeButton,
+    },
+    {
+      sub: ctText.ctBirth,
+      contents: ctText.ctBirthText,
+      bttnText: ctText.ctChangeButton,
+    },
+    {
+      sub: ctText.ctGender,
+      contents: ctText.ctGenderText,
+      bttnText: ctText.ctChangeButton,
+    },
+    {
+      sub: ctText.ctEmail,
+      contents: ctText.ctEmailText,
+      bttnText: ctText.ctChangeButton,
+    },
+    {
+      sub: ctText.ctPhone,
+      contents: ctText.ctPhoneText,
+      bttnText: ctText.ctAddButton,
+    },
+    {
+      sub: ctText.ctAddress,
+      contents: ctText.ctAddressText,
+      bttnText: ctText.ctAddButton,
+    },
+  ];
 
   return (
     <View style={styles.contact}>
       <View style={styles.title}>
-        <TouchableOpacity onPress={navigateToProfile}>
-          <MaterialIcons name="arrow-back-ios" size={22} color="black" />
+        <TouchableOpacity onPress={navigateBack}>
+          <Image source={Images.leftArrow} />
         </TouchableOpacity>
-        <Text style={styles.titleText}>Contact info</Text>
+        <Text style={styles.titleText}>{ctText.ctTitle}</Text>
         <Text></Text>
       </View>
       <View style={styles.image}>
         <TouchableOpacity>
           <ImageBackground
-            source={require("../../assets/contact/contactInfo.png")}
+            source={Images.contactPicture}
             style={styles.imageBackground}
           >
-            <MaterialIcons
-              name="edit"
-              size={24}
-              color="#FFFFFF"
-              style={styles.editButton}
-            />
+            <Image style={styles.editButton} source={Images.edit} />
           </ImageBackground>
         </TouchableOpacity>
       </View>
       <View style={styles.info}>
-        <View style={styles.lines}>
-          <View>
-            <Text style={styles.subTitle}>Name</Text>
-            <Text style={styles.content}>Warren Buffet</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Change</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.lines}>
-          <View>
-            <Text style={styles.subTitle}>Birthdate</Text>
-            <Text style={styles.content}>05 November 1993</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Change</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.lines}>
-          <View>
-            <Text style={styles.subTitle}>Gender</Text>
-            <Text style={styles.content}>Male</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Change</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.lines}>
-          <View>
-            <Text style={styles.subTitle}>Email</Text>
-            <Text style={styles.content}>warren.buff@invest.ai</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Change</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.lines}>
-          <View>
-            <Text style={styles.subTitle}>Phone Number</Text>
-            <Text style={styles.content}>-</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableOpacity>
-        </View>
-        <View style={styles.noBottomBorder}>
-          <View>
-            <Text style={styles.subTitle}>Address</Text>
-            <Text style={styles.content}>-</Text>
-          </View>
-          <TouchableOpacity>
-            <Text style={styles.buttonText}>Add</Text>
-          </TouchableOpacity>
-        </View>
+        {_contactArray.map((x, index) => (
+          <ContactLines
+            key={index}
+            sub={x.sub}
+            contents={x.contents}
+            bttnText={x.bttnText}
+          />
+        ))}
       </View>
     </View>
   );

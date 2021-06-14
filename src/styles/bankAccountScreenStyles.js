@@ -1,62 +1,62 @@
 import { StyleSheet } from "react-native";
-import { DMSans, SFPro } from "../components/fonts";
+import { colors } from "../components/colors";
 
 export const styles = StyleSheet.create({
   bankAccount: {
     flex: 1,
-    backgroundColor: '#F6F6F9',
-    padding: 20
+    backgroundColor: colors.WHITEISH,
+    padding: 20,
   },
   title: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 30,
-    marginBottom: 27
+    marginBottom: 27,
   },
   titleText: {
     fontSize: 17,
-    fontWeight: '600',
-    fontFamily: SFPro
+    fontWeight: "600",
+    fontFamily: "SFPro",
   },
   banks: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.WHITE,
     borderRadius: 20,
     height: 111,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     padding: 18,
-    marginBottom: 29
+    marginBottom: 29,
   },
   text: {
-    alignSelf: 'center',
+    alignSelf: "center",
   },
   bankName: {
     fontSize: 17,
-    color: '#555555',
-    fontWeight: '600',
-    fontFamily: SFPro
+    color: colors.LIGHT_DARK_GRAY,
+    fontWeight: "600",
+    fontFamily: "SFPro",
   },
   name: {
     fontSize: 14,
-    color: '#333333'
+    color: colors.DARK_GRAY2,
   },
   moreButton: {
-    alignSelf: 'flex-start'
+    alignSelf: "flex-start",
   },
   image: {
-    alignSelf: 'center'
+    alignSelf: "center",
   },
   addAccountButton: {
-    backgroundColor: '#31A062',
+    backgroundColor: colors.TURQUOISE2,
     borderRadius: 20,
     height: 60,
-    justifyContent: 'center'
+    justifyContent: "center",
   },
   addAccountButtonText: {
-    textAlign: 'center',
-    color: '#FFFFFF',
+    textAlign: "center",
+    color: colors.WHITE,
     fontSize: 17,
-    fontFamily: SFPro,
-    fontWeight: '600'
-  }
+    fontFamily: "SFPro",
+    fontWeight: "600",
+  },
 });

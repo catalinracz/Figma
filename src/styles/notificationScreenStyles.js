@@ -1,43 +1,42 @@
 import { StyleSheet } from "react-native";
-import { DMSans, SFPro } from "../components/fonts";
-import theme from '../components/theme';
+import { colors } from "../components/colors";
 
 export const styles = StyleSheet.create({
   notification: {
     flex: 1,
-    backgroundColor: theme.mainColor,
-    padding: 20
+    backgroundColor: colors.VERY_LIGHT_GRAY,
+    padding: 20,
   },
   backButton: {
-    marginTop: 30
+    marginTop: 30,
   },
   title: {
     fontSize: 34,
-    fontWeight: 'bold',
-    fontFamily: DMSans,
-    marginBottom: 44
+    fontWeight: "bold",
+    fontFamily: "DMSans-Regular",
+    marginBottom: 44,
   },
   notifications: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     borderBottomWidth: 0.5,
-    borderBottomColor: '#000000',
-    marginBottom: 30
+    borderBottomColor: colors.BLACK,
+    marginBottom: 30,
   },
   image: {
-    alignSelf: 'center'
+    alignSelf: "center",
   },
   text: {
     flex: 0.9,
-    alignSelf: 'center',
+    alignSelf: "center",
     fontSize: 17,
-    fontFamily: SFPro,
-    color: '#000000',
+    fontFamily: "SFPro",
+    color: colors.BLACK,
   },
   time: {
-    alignSelf: 'flex-start',
-    fontFamily: SFPro,
+    alignSelf: "flex-start",
+    fontFamily: "SFPro",
     fontSize: 13,
-    color: '#000000'
-  }
+    color: colors.BLACK,
+  },
 });

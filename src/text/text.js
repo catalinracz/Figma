@@ -82,6 +82,7 @@ export const homeText = {
   gdSub2: "How Much can you start with",
   gdText2: `What do you like to see? It's a very different market from 2018. The way...`,
   assetTitle: "My Asset",
+  percent: "+2%",
   assetPlans: "Current Plans",
   seePlans: "See All Plans",
   historyTitle: "History",

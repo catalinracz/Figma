@@ -25,4 +25,8 @@ export const Images = {
   ellipse1: require("../../assets/homepage/Ellipse740.png"),
   ellipse2: require("../../assets/homepage/Ellipse741.png"),
   assetImg: require("../../assets/asset/asset1.png"),
+  menu: require("../../assets/homepage/menu.png"),
+  notif: require("../../assets/homepage/notif.png"),
+  exit: require("../../assets/homepage/exit.png"),
+  up: require("../../assets/homepage/up.png")
 };

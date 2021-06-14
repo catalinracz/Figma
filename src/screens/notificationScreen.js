@@ -1,34 +1,49 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { MaterialIcons } from "@expo/vector-icons";
-import { styles } from '../styles/notificationScreenStyles';
+import React from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import { styles } from "../styles/notificationScreenStyles";
+import { useNavigation } from "@react-navigation/native";
+import { Images } from "../components/images";
+import { ntText } from "../text/text";
+import NotificationLines from "../components/notificationLines";
 
-const Notification = ({ navigation }) => {
-  const navigateToProfile = () => {
-    navigation.navigate('Account');
+const Notification = () => {
+  const navigator = useNavigation();
+  const navigateBack = () => {
+    navigator.goBack();
   };
+
+  const _notificationArray = [
+    {
+      imgName: Images.notification1,
+      texts: ntText.ntText1,
+      times: ntText.ntTime1,
+    },
+    {
+      imgName: Images.notification2,
+      texts: ntText.ntText2,
+      times: ntText.ntTime2,
+    },
+    {
+      imgName: Images.notification3,
+      texts: ntText.ntText3,
+      times: ntText.ntTime3,
+    },
+  ];
 
   return (
     <View style={styles.notification}>
-      <TouchableOpacity onPress={navigateToProfile} style={styles.backButton}>
-        <MaterialIcons name="arrow-back-ios" size={22} color="black" />
+      <TouchableOpacity onPress={navigateBack} style={styles.backButton}>
+        <Image source={Images.leftArrow} />
       </TouchableOpacity>
       <Text style={styles.title}>Notification</Text>
-      <View style={styles.notifications}>
-        <Image source={require('../../assets/notification/image10.png')} style={styles.image}/>
-        <Text style={styles.text}>Apple stocks just increased. Check it out now.</Text>
-        <Text style={styles.time}>15min ago</Text>
-      </View>
-      <View style={styles.notifications}>
-        <Image source={require('../../assets/notification/image11.png')} style={styles.image}/>
-        <Text style={styles.text}>Check out today's best investor. You'll learn from him.</Text>
-        <Text style={styles.time}>3min ago</Text>
-      </View>
-      <View style={styles.notifications}>
-        <Image source={require('../../assets/notification/image12.png')} style={styles.image}/>
-        <Text style={styles.text}>Where do you see yourself in the next ages.</Text>
-        <Text style={styles.time}>30secs ago</Text>
-      </View>
+      {_notificationArray.map((x, index) => (
+        <NotificationLines
+          key={index}
+          imgName={x.imgName}
+          texts={x.texts}
+          times={x.times}
+        />
+      ))}
     </View>
   );
 };
