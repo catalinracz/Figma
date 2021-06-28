@@ -1,7 +1,8 @@
 const roots = {
-  signupScreen:'SignUp',
+  firstScreen:'First',
   homeScreen:'Home',
-  loginScreen:'LogIn',
+  signUpScreen:'SignUp',
+  loginScreen:'Login',
   contactInfoScreen: 'Contact',
   notificationScreen: 'Notification',
   bankAccountInfoScreen: 'BankAccount'

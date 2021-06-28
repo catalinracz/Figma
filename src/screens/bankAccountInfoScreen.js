@@ -2,30 +2,30 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { styles } from "../styles/bankAccountScreenStyles";
 import { useNavigation } from "@react-navigation/native";
-import { Images } from "../components/images";
+import { Images } from "../theme/images";
 import { bankText } from "../text/text";
 import BankLines from "../components/bankAccountLines";
+
+const _bankArray = [
+  {
+    imgBank: Images.bankAmerica,
+    bank: bankText.bankAmerica,
+    names: bankText.bankName,
+    more: Images.more,
+  },
+  {
+    imgBank: Images.bankZenith,
+    bank: bankText.bankZenith,
+    names: bankText.bankName,
+    more: Images.more,
+  },
+];
 
 const BankAccount = () => {
   const navigator = useNavigation();
   const navigateBack = () => {
     navigator.goBack();
   };
-
-  const _bankArray = [
-    {
-      imgBank: Images.bankImage1,
-      bank: bankText.bank1,
-      names: bankText.bankName,
-      more: Images.more,
-    },
-    {
-      imgBank: Images.bankImage2,
-      bank: bankText.bank2,
-      names: bankText.bankName,
-      more: Images.more,
-    },
-  ];
 
   return (
     <View style={styles.bankAccount}>
@@ -47,7 +47,7 @@ const BankAccount = () => {
       ))}
       <View style={styles.addAccountButton}>
         <TouchableOpacity>
-          <Text style={styles.addAccountButtonText}>Add account</Text>
+          <Text style={styles.addAccountButtonText}>{bankText.bankButton}</Text>
         </TouchableOpacity>
       </View>
     </View>

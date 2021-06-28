@@ -14,8 +14,8 @@ export const Images = {
   notification2: require("../../assets/notification/image11.png"),
   notification3: require("../../assets/notification/image12.png"),
   more: require("../../assets/bank/more.png"),
-  bankImage1: require("../../assets/bank/image1.png"),
-  bankImage2: require("../../assets/bank/image2.png"),
+  bankAmerica: require("../../assets/bank/image1.png"),
+  bankZenith: require("../../assets/bank/image2.png"),
   homeTab: require("../../assets/homepage/Home1.png"),
   searchTab: require("../../assets/homepage/Search1.png"),
   transactionTab: require("../../assets/homepage/transaction1.png"),
@@ -28,5 +28,6 @@ export const Images = {
   menu: require("../../assets/homepage/menu.png"),
   notif: require("../../assets/homepage/notif.png"),
   exit: require("../../assets/homepage/exit.png"),
-  up: require("../../assets/homepage/up.png")
+  up: require("../../assets/homepage/up.png"),
+  redRight: require("../../assets/homepage/seeAllRight.png")
 };

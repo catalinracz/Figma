@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, Image } from "react-native";
 import { styles } from "../styles/profileScreensStyles";
-import { Images } from "../components/images";
+import { Images } from "../theme/images";
 
 const ProfileButton = ({ imageName, name, screen, navigateTo }) => {
   return (

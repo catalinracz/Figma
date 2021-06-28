@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../components/colors";
+import { colors } from "../theme/colors";
 
 export const styles = StyleSheet.create({
   homepage: {
@@ -161,7 +161,6 @@ export const styles = StyleSheet.create({
   plans: {
     marginTop: 40,
     flex: 1,
-    marginRight: -30,
   },
   plansText: {
     flexDirection: "row",

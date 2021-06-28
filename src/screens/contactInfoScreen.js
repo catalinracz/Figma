@@ -8,48 +8,48 @@ import {
 } from "react-native";
 import { styles } from "../styles/contactScreenStyles";
 import { useNavigation } from "@react-navigation/native";
-import { Images } from "../components/images";
+import { Images } from "../theme/images";
 import { ctText } from "../text/text";
 import ContactLines from "../components/contactLines";
+
+const _contactArray = [
+  {
+    sub: ctText.ctName,
+    contents: ctText.ctNameText,
+    bttnText: ctText.ctChangeButton,
+  },
+  {
+    sub: ctText.ctBirth,
+    contents: ctText.ctBirthText,
+    bttnText: ctText.ctChangeButton,
+  },
+  {
+    sub: ctText.ctGender,
+    contents: ctText.ctGenderText,
+    bttnText: ctText.ctChangeButton,
+  },
+  {
+    sub: ctText.ctEmail,
+    contents: ctText.ctEmailText,
+    bttnText: ctText.ctChangeButton,
+  },
+  {
+    sub: ctText.ctPhone,
+    contents: ctText.ctPhoneText,
+    bttnText: ctText.ctAddButton,
+  },
+  {
+    sub: ctText.ctAddress,
+    contents: ctText.ctAddressText,
+    bttnText: ctText.ctAddButton,
+  },
+];
 
 const Contact = () => {
   const navigator = useNavigation();
   const navigateBack = () => {
     navigator.goBack();
   };
-
-  const _contactArray = [
-    {
-      sub: ctText.ctName,
-      contents: ctText.ctNameText,
-      bttnText: ctText.ctChangeButton,
-    },
-    {
-      sub: ctText.ctBirth,
-      contents: ctText.ctBirthText,
-      bttnText: ctText.ctChangeButton,
-    },
-    {
-      sub: ctText.ctGender,
-      contents: ctText.ctGenderText,
-      bttnText: ctText.ctChangeButton,
-    },
-    {
-      sub: ctText.ctEmail,
-      contents: ctText.ctEmailText,
-      bttnText: ctText.ctChangeButton,
-    },
-    {
-      sub: ctText.ctPhone,
-      contents: ctText.ctPhoneText,
-      bttnText: ctText.ctAddButton,
-    },
-    {
-      sub: ctText.ctAddress,
-      contents: ctText.ctAddressText,
-      bttnText: ctText.ctAddButton,
-    },
-  ];
 
   return (
     <View style={styles.contact}>

@@ -1,11 +1,37 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import { styles } from "../styles/profileScreensStyles";
-import { Images } from "../components/images";
+import { Images } from "../theme/images";
 import { pfText } from "../text/text";
 import roots from "../navigator/roots";
 import ProfileButton from "../components/profileButton";
 import { useNavigation } from "@react-navigation/native";
+
+const _profileArray = [
+  {
+    imageName: Images.contact,
+    name: pfText.pfContact,
+    screen: roots.contactInfoScreen,
+  },
+  {
+    imageName: Images.fund,
+    name: pfText.pfFund,
+  },
+  {
+    imageName: Images.bank,
+    name: pfText.pfBank,
+    screen: roots.bankAccountInfoScreen,
+  },
+  {
+    imageName: Images.doc,
+    name: pfText.pfDoc,
+  },
+  {
+    imageName: Images.setting,
+    name: pfText.pfSetting,
+    screen: roots.notificationScreen,
+  },
+];
 
 const Profile = () => {
   const navigator = useNavigation();
@@ -16,31 +42,6 @@ const Profile = () => {
     navigator.goBack();
   };
 
-  const _profileArray = [
-    {
-      imageName: Images.contact,
-      name: pfText.pfContact,
-      screen: roots.contactInfoScreen,
-    },
-    {
-      imageName: Images.fund,
-      name: pfText.pfFund,
-    },
-    {
-      imageName: Images.bank,
-      name: pfText.pfBank,
-      screen: roots.bankAccountInfoScreen,
-    },
-    {
-      imageName: Images.doc,
-      name: pfText.pfDoc,
-    },
-    {
-      imageName: Images.setting,
-      name: pfText.pfSetting,
-      screen: roots.notificationScreen,
-    },
-  ];
 
   return (
     <View style={styles.profile}>
